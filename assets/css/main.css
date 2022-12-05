@@ -41,6 +41,7 @@ body {
 
 .notes__list-item {
     cursor: pointer;
+    margin: 5px 0px;
 }
 
 .notes__list-item--selected {
@@ -93,4 +94,8 @@ body {
     line-height: 1.5;
     margin-top: 2em;
     resize: none;
+}
+
+.delete__button {
+    float: right;
 }
