@@ -123,6 +123,13 @@ class NotesView {
             })
         })
     }
+
+    updateActiveNote(note) {
+        this.root.querySelector('.notes__title').value = note.title;
+        this.root.querySelector('.notes__body').value = note.body;
+
+        this.root.querySelectorAll('notes__list-item')
+    }
 }
 
 
@@ -151,5 +158,7 @@ const view = new NotesView(app, {
 //     body: 'another body',
 // })
 
+const notes = NotesAPI.getAllNotes();
 
-view.updateNoteList(NotesAPI.getAllNotes())
+view.updateNoteList(notes);
+view.updateActiveNote(notes[0]);
