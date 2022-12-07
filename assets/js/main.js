@@ -72,10 +72,9 @@ class NotesView {
 
                 this.onNoteEdit(updatedTitle, updatedBody);
             })
-        })
+        });
 
-
-        console.log(this._createListItemHTML(34, 'title', 'body', new Date()))
+        this.updateNotePreviewVisibility(false);
     }
 
 
@@ -128,10 +127,17 @@ class NotesView {
         this.root.querySelector('.notes__title').value = note.title;
         this.root.querySelector('.notes__body').value = note.body;
 
-        this.root.querySelectorAll('notes__list-item')
+        this.root.querySelectorAll('.notes__list-item').forEach(noteListItem => {
+            noteListItem.classList.remove('notes__list-item--selected');
+        })
+
+        this.root.querySelector(`[data-note-id="${note.id}"]`).classList.add('notes__list-item--selected');
+    }
+
+    updateNotePreviewVisibility(visible) {
+        this.root.querySelector('.notes__preview').style.visibility = visible ? 'visible' : 'hidden';
     }
 }
-
 
 
 

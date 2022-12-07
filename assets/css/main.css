@@ -42,11 +42,14 @@ body {
 .notes__list-item {
     cursor: pointer;
     margin: 5px 0px;
+    color: #fff;
+    background-color: #414141;
+    border-radius: 7px;
 }
 
 .notes__list-item--selected {
+    color: #000;
     background: #eeeeee;
-    border-radius: 7px;
     font-weight: bold;
 }
 
